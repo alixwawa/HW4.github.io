@@ -41,11 +41,3 @@ You are required to submit the following for review:
 - - -
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
 
-function checkAnswer(answer){
-    incorrecto != quizQuestions[currentQuestionIndex].correctAnswer;
-
-    
-    if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
-        timeLeft -= 5
-        
-    };
