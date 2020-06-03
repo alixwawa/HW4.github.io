@@ -1,109 +1,109 @@
 // Gathering HTML elements for manipulation
-var quizBody = document.getElementById("quiz");
+let = document.getElementById("quiz");
 
-var resultsEl = document.getElementById("result");
+let resultsEl = document.getElementById("result");
 
-var finalScoreEl = document.getElementById("finalScore");
+let finalScoreEl = document.getElementById("finalScore");
 
-var gameoverDiv = document.getElementById("gameover");
+let gameoverDiv = document.getElementById("gameover");
 
-var questionsEl = document.getElementById("questions");
+let questionsEl = document.getElementById("questions");
 
-var quizTimer = document.getElementById("timer");
+let quizTimer = document.getElementById("timer");
 
-var startQuizButton = document.getElementById("startbtn");
+let startQuizButton = document.getElementById("startbtn");
 
-var startQuizDiv = document.getElementById("startpage");
+let startQuizDiv = document.getElementById("startpage");
 
-var highscoreContainer = document.getElementById("highscoreContainer");
+let highscoreContainer = document.getElementById("highscoreContainer");
 
-var highscoreDiv = document.getElementById("high-scorePage");
+let highscoreDiv = document.getElementById("high-scorePage");
 
-var highscoreInputName = document.getElementById("initials");
+let highscoreInputName = document.getElementById("initials");
 
-var highscoreDisplayName = document.getElementById("highscore-initials");
+let highscoreDisplayName = document.getElementById("highscore-initials");
 
-var endGameBtns = document.getElementById("endGameBtns");
+let endGameBtns = document.getElementById("endGameBtns");
 
-var submitScoreBtn = document.getElementById("submitScore");
+let submitScoreBtn = document.getElementById("submitScore");
 
-var highscoreDisplayScore = document.getElementById("highscore-score");
+let highscoreDisplayScore = document.getElementById("highscore-score");
 
-var buttonA = document.getElementById("a");
+let buttonA = document.getElementById("a");
 
-var buttonB = document.getElementById("b");
+let buttonB = document.getElementById("b");
 
-var buttonC = document.getElementById("c");
+let buttonC = document.getElementById("c");
 
-var buttonD = document.getElementById("d");
+let buttonD = document.getElementById("d");
 
 // the questions
-var quizQuestions = [{
+let quizQuestions = [{
     question: "What is a function?",
-    choiceA: "a reuseable block of code that performs a specific task",
-    choiceB: "a tangible set of keys",
-    choiceC: "a variable",
-    choiceD: "NaN",
-    correctAnswer: "a"
+    optionA: "a reuseable block of code that performs a specific task",
+    optionB: "a tangible set of keys",
+    optionC: "a variable",
+    optionD: "NaN",
+    theAnswer: "a"
 },
 {
     question: "A function declaration consists of?",
-    choiceA: "B, C, D",
-    choiceB: "function keyword",
-    choiceC: "name of the function",
-    choiceD: "a function body",
-    correctAnswer: "a"
+    optionA: "B, C, D",
+    optionB: "function keyword",
+    optionC: "name of the function",
+    optionD: "a function body",
+    theAnswer: "a"
 },
 {
     question: "The ? is shorthand to simplify concise if else statements",
-    choiceA: "Cursive",
-    choiceB: "Ternary Operator",
-    choiceC: "DOM",
-    choiceD: "Objects",
-    correctAnswer: "b"
+    optionA: "Cursive",
+    optionB: "Ternary Operator",
+    optionC: "DOM",
+    optionD: "Objects",
+    theAnswer: "b"
 },
 {
     question: "What does the bang operator(!) do?",
-    choiceA: "makes everything true",
-    choiceB: "makes everything false",
-    choiceC: "cures cancer",
-    choiceD: "switches the truthiness and falsiness",
-    correctAnswer: "d"
+    optionA: "makes everything true",
+    optionB: "makes everything false",
+    optionC: "cures cancer",
+    optionD: "switches the truthiness and falsiness",
+    theAnswer: "d"
 },
 {
     question: "Example of a comparison operators",
-    choiceA: ">",
-    choiceB: "{",
-    choiceC: "@",
-    choiceD: "?",
-    correctAnswer: "a"
+    optionA: ">",
+    optionB: "{",
+    optionC: "@",
+    optionD: "?",
+    theAnswer: "a"
 },
 {
     question: "What does console.log do?",
-    choiceA: "Consoles you",
-    choiceB: "Makes you breakfast",
-    choiceC: "Prints to the console",
-    choiceD: "if true statements",
-    correctAnswer: "c"
+    optionA: "Consoles you",
+    optionB: "Makes you breakfast",
+    optionC: "Prints to the console",
+    optionD: "if true statements",
+    theAnswer: "c"
 },
 {
     question: "What are variables used in Javascript",
-    choiceA: "make things confusing",
-    choiceB: "for storing and holding data",
-    choiceC: "deletes everything",
-    choiceD: "pseudocodes",
-    correctAnswer: "b"
+    optionA: "make things confusing",
+    optionB: "for storing and holding data",
+    optionC: "deletes everything",
+    optionD: "pseudocodes",
+    theAnswer: "b"
 },
 
 
 ];
 // more global scope variables
-var finalQuestionIndex = quizQuestions.length;
-var currentQuestionIndex = 0;
-var timeLeft = 76;
-var timerInterval;
-var score = 0;
-var correct;
+let finalQuestionIndex = quizQuestions.length;
+let currentQuestionIndex = 0;
+let timeLeft = 76;
+let timerInterval;
+let score = 0;
+let correct;
 
 // this function goes through an object and creates the answers and questions
 function generateQuizQuestion() {
@@ -113,10 +113,10 @@ function generateQuizQuestion() {
     }
     var currentQuestion = quizQuestions[currentQuestionIndex];
     questionsEl.innerHTML = "<p>" + currentQuestion.question + "</p>";
-    buttonA.innerHTML = currentQuestion.choiceA;
-    buttonB.innerHTML = currentQuestion.choiceB;
-    buttonC.innerHTML = currentQuestion.choiceC;
-    buttonD.innerHTML = currentQuestion.choiceD;
+    buttonA.innerHTML = currentQuestion.optionA;
+    buttonB.innerHTML = currentQuestion.optionB;
+    buttonC.innerHTML = currentQuestion.optionC;
+    buttonD.innerHTML = currentQuestion.optionD;
 };
 
 // this function starts everything.
@@ -135,15 +135,15 @@ function startQuiz() {
             showScore();
         }
     }, 1000);
-    quizBody.style.display = "block";
+    let.style.display = "block";
 }
 // This function displays your score at the end screen
 function showScore() {
-    quizBody.style.display = "none"
+    let.style.display = "none"
     gameoverDiv.style.display = "flex";
     clearInterval(timerInterval);
     highscoreInputName.value = "";
-    finalScoreEl.innerHTML = "You got " + score + " out of " + quizQuestions.length + " correct!";
+    finalScoreEl.innerHTML = "You answered " + score + " out of " + quizQuestions.length + " correct!";
 }
 
 // once the submit button is clicked on, the highschore function is run
@@ -151,12 +151,12 @@ submitScoreBtn.addEventListener("click", function highscore() {
 
 
     if (highscoreInputName.value === "") {
-        alert("Initials cannot be blank");
+        alert("gotta type something in the intial box");
         return false;
     } else {
-        var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
-        var currentUser = highscoreInputName.value.trim();
-        var currentHighscore = {
+        let savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+        let currentUser = highscoreInputName.value.trim();
+        let currentHighscore = {
             name: currentUser,
             score: score
         };
@@ -178,10 +178,10 @@ submitScoreBtn.addEventListener("click", function highscore() {
 function generateHighscores() {
     highscoreDisplayName.innerHTML = "";
     highscoreDisplayScore.innerHTML = "";
-    var highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+    let highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
     for (i = 0; i < highscores.length; i++) {
-        var newNameSpan = document.createElement("li");
-        var newScoreSpan = document.createElement("li");
+        let newNameSpan = document.createElement("li");
+        let newScoreSpan = document.createElement("li");
         newNameSpan.textContent = highscores[i].name;
         newScoreSpan.textContent = highscores[i].score;
         highscoreDisplayName.appendChild(newNameSpan);
@@ -219,16 +219,16 @@ function replayQuiz() {
 
 // this function sees if the answer is correct or not 
 function checkAnswer(answer) {
-    correct = quizQuestions[currentQuestionIndex].correctAnswer;
+    correct = quizQuestions[currentQuestionIndex].theAnswer;
 
     if (answer === correct && currentQuestionIndex !== finalQuestionIndex) {
         score++;
-        alert("That Is Correct!");
+        alert("You got it!");
         currentQuestionIndex++;
         generateQuizQuestion();
         //display in the results div that the answer is correct.
     } else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex) {
-        alert("That Is Incorrect.")
+        alert("Sorry... that's wrong.")
         //subtracts time if incorrect :)
         timeLeft -= 5
         currentQuestionIndex++;
